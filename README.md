@@ -2,7 +2,8 @@
 To start building a text game model.
  
  This model needs several images and font. 
- You can download them with the files.
+ You can download them with the files.(Upload later)
+ Take a look at http://pan.baidu.com/s/1mi2ogcC to download them.
  Put them in a folder named 'imgs' and put it in a folder with code file. 
  !!!Remember to name the code file folder 'TextGame' !!!
  Test file is for testing, like it says. It seems having some problem.
