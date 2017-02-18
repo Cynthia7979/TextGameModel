@@ -22,7 +22,8 @@ class TextBox(pygame.sprite.Sprite):
 
     def change_surface(self,text,img,rect):
         assert len(text) <= 270, 'Your text in text box is too long, it\'s %d, try to shorten it'
-        self.image = pygame.image.load(img) if img != self.image else self.image
+        self.imageStr = img
+        self.image = pygame.image.load(img)
         self.box = pygame.image.load(img)
         self.rect = rect
         self.image = pygame.transform.scale(self.image,(self.rect.width,self.rect.height))
@@ -36,7 +37,7 @@ class TextBox(pygame.sprite.Sprite):
         self.box.blit(self.text,text_rect)
 
     def change_text(self,text):
-        self.change_surface(text,self.image,self.rect)
+        self.change_surface(text,self.imageStr,self.rect)
 
     def change_invisible(self):
         self.invisible = not self.invisible
@@ -51,7 +52,7 @@ class TextBox(pygame.sprite.Sprite):
         return self.rect.collide(pygame.Rect(mousePos[0],mousePos[1],1,1))
 
     def change_rect(self,rect):
-        self.change_surface(self.text,self.image,rect)
+        self.change_surface(self.text,self.imageStr,rect)
 
 
 class ChoiceTextBox(TextBox):
@@ -98,7 +99,8 @@ class NameTextBox(TextBox):
         #name_rect.left,name_rect.top = ()
         assert len(text) <= 240, 'Your text in name text box is too long, it\'s %d, try to shorten it' % (len(text))
         assert len(name) <= 20, 'Your name in name text box is too long, it\'s %d, try to shorten it' % (len(name))
-        self.image = pygame.image.load(img) if img != self.image else self.image
+        self.imageStr = img
+        self.image = pygame.image.load(img)
         self.box = pygame.image.load(img)
         self.rect = rect
         self.image = pygame.transform.scale(self.image,(self.rect.width,self.rect.height))
@@ -116,4 +118,4 @@ class NameTextBox(TextBox):
         self.box.blit(self,name,name_rect)
 
     def change_name(self,name):
-        self.change_surface(self.text,self.image,self.rect,name)
+        self.change_surface(self.text,self.imageStr,self.rect,name)
