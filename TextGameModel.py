@@ -30,8 +30,8 @@ class TextBox(pygame.sprite.Sprite):
         self.box = pygame.transform.scale(self.box, (self.rect.width, self.rect.height))
         self.font = pygame.font.Font('imgs/simhei.ttf',25)
         self.color = BLACK
-        textStr = split_str(text)
-        self.text = self.font.render(textStr, True, self.color) if self.text != textStr else self.text
+        self.textStr = split_str(text)
+        self.text = self.font.render(self.textStr, True, self.color)
         text_rect = self.text.get_rect()
         text_rect.left,text_rect.top = (12,12)
         self.box.blit(self.text,text_rect)
@@ -52,7 +52,7 @@ class TextBox(pygame.sprite.Sprite):
         return self.rect.collide(pygame.Rect(mousePos[0],mousePos[1],1,1))
 
     def change_rect(self,rect):
-        self.change_surface(self.text,self.imageStr,rect)
+        self.change_surface(self.textStr,self.imageStr,rect)
 
 
 class ChoiceTextBox(TextBox):
@@ -67,7 +67,7 @@ class ChoiceTextBox(TextBox):
             choice = TextBox(lst_of_choice[box])
             choice.change_rect(pygame.Rect(432,296,237,66))
             #How to put choice boxes on the screen so that it will make gap equally? -M-###
-            self.choicesBox.apppend(choice)
+            self.choicesBox.append(choice)
             #print '1'
 
     def get_button_pressed(self,mousePos):

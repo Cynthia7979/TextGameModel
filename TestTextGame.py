@@ -21,6 +21,7 @@ def main(type):
             pygame.display.flip()
             for event in pygame.event.get():
                 if event == QUIT:
+                    exit()
                     pygame.quit()
                     sys.exit()
     elif type == 'choice':
@@ -50,4 +51,4 @@ def main(type):
                     pygame.quit()
                     sys.exit()
 
-main('box')
+main('choice')
