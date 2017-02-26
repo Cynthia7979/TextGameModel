@@ -76,8 +76,8 @@ class ChoiceTextBox(TextBox):
                 return button,self.choicesBox.index(button)
         return None
 
-    def change_surface(self,text,image,rect):
-        print 'a'
+    #def change_surface(self,text,image,rect):
+    #    print 'a'
 
     def update(self,surface):
         if not self.invisible:

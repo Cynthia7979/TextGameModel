@@ -7,4 +7,4 @@ To start building a text game model.
  Put them in a folder named 'imgs' and put it in a folder with code file. 
 
 Have a good day
-\(£Þv£Þ¡ñ)/
+[Happy.jpg]
